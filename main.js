@@ -19,10 +19,16 @@ fetch(url).then(res => res.json()).then(res => {
         thEvents.textContent = events;
         thSquirrel = document.createElement("td");
         thSquirrel.textContent = res[i].squirrel
-        console.log(thSquirrel);
+        // res[i].squirrel is true change the color row
+        if(res[i].squirrel == true)
+        {
+            trTag.style.backgroundColor = "rgba(255, 0, 0, 0.2)"
+        }
+        // trIndex, trEvents, trSquirrel append trTag
         trTag.appendChild(thIndex);
         trTag.appendChild(thEvents);
         trTag.appendChild(thSquirrel);
+        // trTag append row
         row.appendChild(trTag)
     }
 })
